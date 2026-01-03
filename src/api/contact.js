@@ -13,7 +13,7 @@ export default async function handler(req, res) {
     const resend = new Resend(process.env.RESEND_API_KEY);
 
     await resend.emails.send({
-   from: "Portfolio Contact <contact@shubhamportfolio.com>"
+   from: "Portfolio Contact <onboarding@resend.dev>"
       to: "shubhamsharma200599@gmail.com",
       subject: `New Portfolio Message: ${subject}`,
       html: `
@@ -31,4 +31,5 @@ export default async function handler(req, res) {
     console.log(err);
     return res.status(500).json({ message: "Email sending failed" });
   }
+
 }
